@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delícias da Nanda - Bolos no Pote</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" type="image/png">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffaf9;
+    color: #4a2c2a;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffb6c1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a2c2a;
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav ul li a:hover { color: #e91e63; }
+nav ul li a.active { color: #e91e63; }
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e91e63;
+    border-radius: 2px;
+}
+
+header {
+    background-color: #ffb6c1;
+    padding: 80px 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeInHeader 1.5s ease-out forwards;
+}
+
+@keyframes fadeInHeader {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #4a2c2a;
+    margin: 0;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+.sabores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bolo {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 220px;
+    padding: 20px;
+    transition: transform 0.4s, opacity 0.6s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.bolo.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bolo:hover { transform: scale(1.05); }
+
+.bolo img {
+    width: 100%;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.bolo h3 { margin: 10px 0 5px; }
+
+.bolo p.descricao {
+    font-size: 0.9em;
+    color: #6b4b4a;
+    margin: 5px 0 10px;
+}
+
+.preco {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.botao {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.botao:hover {
+    background-color: #d81b60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233,30,99,0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(233,30,99,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233,30,99,0); }
+}
+
+footer {
+    background-color: #ffb6c1;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p { margin: 5px 0; }
+
+@media (max-width: 600px) {
+    .sabores { flex-direction: column; align-items: center; }
+    .bolo { width: 80%; }
+    nav ul { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+    <li><a href="#inicio" class="active">Início</a></li>
+    <li><a href="#sabores">Sabores</a></li>
+    <li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+
+<header id="inicio">
+<h1>🍰 Delícias da Nanda 🍓</h1>
+<p>Bolos no pote feitos com amor ❤️</p>
+</header>
+
+<main>
+<h2 id="sabores">Nossos Sabores</h2>
+
+<div class="sabores">
+
+<!-- Chocolate -->
+<div class="bolo">
+    <img src="https://receitatodahora.com.br/wp-content/uploads/2024/07/bolo-no-pote-de-brigadeiro-0307.jpg" alt="Bolo de Chocolate">
+    <h3>Chocolate</h3>
+    <p class="descricao">Camadas de massa fofinha com brigadeiro cremoso 🍫</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Chocolate%20🍫" target="_blank">Pedir agora</a>
+</div>
+
+<!-- Maracujá -->
+<div class="bolo">
+    <img src="https://cdn0.tudoreceitas.com/pt/posts/8/9/0/bolo_de_pote_de_maracuja_3098_orig.jpg" alt="Bolo de Maracujá">
+    <h3>Maracujá</h3>
+    <p class="descricao">Mousse suave com toque azedinho 🥭</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Maracujá%20🥭" target="_blank">Pedir agora</a>
+</div>
+
+<!-- Ninho com Morango -->
+<div class="bolo">
+    <img src="https://receitatodahora.com.br/wp-content/uploads/2017/06/bolo-de-pote-de-leite-ninho-com-morango.jpg" alt="Ninho com Morango">
+    <h3>Ninho com Morango</h3>
+    <p class="descricao">Leite ninho cremoso com morangos frescos 🍓</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Ninho%20com%20Morango%20🍓" target="_blank">Pedir agora</a>
+</div>
+
+<!-- Morango -->
+<div class="bolo">
+    <img src="https://cdn0.tudoreceitas.com/pt/posts/2/9/8/bolo_de_pote_de_morango_2892_orig.jpg" alt="Morango">
+    <h3>Morango</h3>
+    <p class="descricao">Massa leve com pedaços de morango 🍰</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Morango%20🍓" target="_blank">Pedir agora</a>
+</div>
+
+<!-- Cenoura com Chocolate -->
+<div class="bolo">
+    <img src="imagem/cenoura.jpg" alt="Cenoura com Chocolate">
+    <h3>Cenoura com Chocolate</h3>
+    <p class="descricao">Clássico irresistível com ganache 🍫🥕</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Cenoura%20com%20Chocolate%20🥕🍫" target="_blank">Pedir agora</a>
+</div>
+
+<!-- Prestígio -->
+<div class="bolo">
+    <img src="imagem/prestigio.png" alt="Prestígio">
+    <h3>Prestígio</h3>
+    <p class="descricao">Chocolate com coco cremoso 🥥🍫</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20um%20bolo%20de%20Prestígio%20🥥🍫" target="_blank">Pedir agora</a>
+</div>
+
+<!-- ⭐ TRUFA DE LIMÃO -->
+<div class="bolo">
+    <img src="imagem/limão.jpg" alt="Trufa de Limão">
+    <h3>Trufa de Limão</h3>
+    <p class="descricao">Creme trufado suave com toque cítrico do limão 🍋✨</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20uma%20Trufa%20de%20Limão%20🍋" target="_blank">Pedir agora</a>
+</div>
+
+<!-- ⭐ TRUFA DE COCO -->
+<div class="bolo">
+    <img src="imagem/coco.jpg" alt="Trufa de Coco">
+    <h3>Trufa de Coco</h3>
+    <p class="descricao">Cremosa, docinha e com muito coco 🥥✨</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20uma%20Trufa%20de%20Coco%20🥥" target="_blank">Pedir agora</a>
+</div>
+
+<!-- ⭐ TRUFA DE BRIGADEIRO -->
+<div class="bolo">
+    <img src="imagem/brigadeiro.jfif" alt="Trufa de Brigadeiro">
+    <h3>Trufa de Brigadeiro</h3>
+    <p class="descricao">Chocolate cremoso com sabor de brigadeiro 🍫✨</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20uma%20Trufa%20de%20Brigadeiro%20🍫" target="_blank">Pedir agora</a>
+</div>
+
+<!-- ⭐ TRUFA DE MARACUJÁ -->
+<div class="bolo">
+    <img src="imagem/maracuja.jfif" alt="Trufa de Maracujá">
+    <h3>Trufa de Maracujá</h3>
+    <p class="descricao">Trufa cremosa com sabor refrescante de maracujá 🥭✨</p>
+    <p class="preco">R$10,00</p>
+    <a class="botao" href="https://wa.me/5531997556180?text=Olá%20Fernanda!%20Quero%20uma%20Trufa%20de%20Maracujá%20🥭" target="_blank">Pedir agora</a>
+</div>
+
+</div>
+</main>
+
+<footer id="contato">
+<p>📞 WhatsApp: <a href="https://wa.me/5531997556180" target="_blank">(31) 99755-6180</a></p>
+<p>📸 Instagram: <a href="https://instagram.com/ea_guedessx" target="_blank">@ea_guedessx</a></p>
+<p>© 2025 Delícias da Fernanda</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll("header, main, footer");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+    });
+});
+
+const bolos = document.querySelectorAll(".bolo");
+window.addEventListener("scroll", revealOnScroll);
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    bolos.forEach(bolo => {
+        const top = bolo.getBoundingClientRect().top;
+        if (top < windowHeight - 100) bolo.classList.add("reveal");
+    });
+}
+revealOnScroll();
+</script>
+
+</body>
+</html>
+
+
+
